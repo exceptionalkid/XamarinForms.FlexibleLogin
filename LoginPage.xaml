@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:PancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black"
+             x:Class="HrAppCross.Views.LoginPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid BackgroundColor="{DynamicResource ColorC}" RowDefinitions="*,5,450,50">
+            <PancakeView:PancakeView BackgroundGradientEndPoint="0,1" 
+                                     BackgroundGradientStartPoint="0,0"
+                                     CornerRadius="0 0 80 0">
+                <PancakeView:PancakeView.BackgroundGradientStops>
+                    <PancakeView:GradientStopCollection>
+                            <PancakeView:GradientStop Color="#6b705c" Offset="0.1"/>
+                            <PancakeView:GradientStop Color="#a5a58d" Offset="1"/>
+                    </PancakeView:GradientStopCollection>
+                </PancakeView:PancakeView.BackgroundGradientStops>
+                <Grid Margin="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowDefinitions="*,auto">
+                        <Image Source="eliteicon.png" WidthRequest="80" HorizontalOptions="CenterAndExpand"></Image>
+                        <Label Text="Version 1.0.0.0" FontAttributes="Bold" FontSize="18" Grid.Row="1" HorizontalOptions="EndAndExpand"
+                               VerticalOptions="CenterAndExpand" TextColor="Black"></Label>
+                </Grid>
+            </PancakeView:PancakeView>
+             
+            <PancakeView:PancakeView Grid.Row="2" Margin="0,60,0,0" >
+                <Frame Margin="15,0,15,15" 
+                       BackgroundColor="Transparent"
+                       HasShadow="True"
+                       CornerRadius="5">
+                  <Grid HorizontalOptions="Center" VerticalOptions="Center" RowSpacing="15" 
+                        ColumnDefinitions="*,250,*"
+                        RowDefinitions="*,*,*,*">
+                        <Frame Grid.Row="0" 
+                               HasShadow="False"
+                               Grid.Column="1"
+                               IsClippedToBounds="True"
+                               Padding="10,0,0,0"
+                               CornerRadius="15" 
+                               HeightRequest="35"
+                               HorizontalOptions="FillAndExpand"
+                               BackgroundColor="Transparent" BorderColor="#197278">
+                            <Grid ColumnDefinitions="30,*">
+                                <Image Source="email.png" WidthRequest="20" HorizontalOptions="CenterAndExpand"></Image>
+                                <Entry Grid.Column="1"
+                               VerticalOptions="FillAndExpand"
+                               HorizontalOptions="FillAndExpand"
+                               HeightRequest="25"
+                               Margin="0,0,5,0"
+                               x:Name="EmailBox"     
+                               Keyboard="Email"
+                               ClearButtonVisibility="WhileEditing"
+                               TextColor="{DynamicResource ColorA}" 
+                               PlaceholderColor="#cad2c5"
+                               Placeholder="Email"
+                               BackgroundColor="Transparent"></Entry>
+                            </Grid>
+                        </Frame>
+                        <Frame Grid.Row="1" 
+                               Padding="10,0,0,0"
+                               IsClippedToBounds="True"
+                               HasShadow="False"
+                               Grid.Column="1"
+                               CornerRadius="15" 
+                               HeightRequest="35"
+                               HorizontalOptions="FillAndExpand"
+                               BackgroundColor="Transparent" BorderColor="#197278">
+                            <Grid ColumnDefinitions="30,*">
+                                    <Image Source="key.png" WidthRequest="20" HorizontalOptions="CenterAndExpand"></Image>
+                                <Entry Grid.Column="1"
+                               Placeholder="Password"
+                               x:Name="PasswordBox"  
+                               TextColor="{DynamicResource ColorA}" 
+                               Margin="0,0,5,0" 
+                               ClearButtonVisibility="WhileEditing"
+                               PlaceholderColor="#cad2c5"
+                               IsPassword="True"
+                               BackgroundColor="Transparent"></Entry>
+                            </Grid>
+                        
+                        </Frame>
+                            <StackLayout Orientation="Horizontal"
+                                     Grid.Row="2" 
+                                     Grid.Column="1">
+                                <Switch x:Name="RememberME" OnColor="{DynamicResource ColorA}" ThumbColor="{DynamicResource ColorB}" IsToggled="False" ></Switch>
+                                <Label 
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="CenterAndExpand"     
+                               Text="Remember Me" 
+                               TextColor="LightGray" ></Label>
+
+                                <Label 
+                               HorizontalOptions="EndAndExpand"
+                               VerticalOptions="CenterAndExpand"     
+                               Text="Change Device?" 
+                               TextColor="LightGray" >
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+                        
+                        <Button x:Name="btnLogin"
+                                Clicked="btnLogin_Clicked"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                CornerRadius="35"
+                                TextColor="Black"
+                                BorderWidth="2"
+                                Background="{DynamicResource GradientColorA}"
+                                Text="LOGIN" WidthRequest="200">
+                        </Button>
+                        <ActivityIndicator x:Name="BusyIndicator" Grid.Row="3" HeightRequest="5" WidthRequest="5" Color="Tomato"></ActivityIndicator>
+                        
+                  </Grid>
+                </Frame>
+            </PancakeView:PancakeView>
+                
+                
+        </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

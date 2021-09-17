@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HrAppCross.App">
+    <Application.Resources>
+        <Color x:Key="ColorA" >#6b705c</Color>
+        <Color x:Key="ColorB" >#a5a58d</Color>
+        <Color x:Key="ColorC" >#181d27</Color>
+        <Color x:Key="ColorD" >#0d1b2a</Color>
+        <Style TargetType="NavigationPage" ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+        </Style>
+        <LinearGradientBrush EndPoint="1,0" x:Key="GradientColorA">
+            <GradientStop Color="{DynamicResource ColorA}" Offset="0.1" />
+            <GradientStop Color="{DynamicResource ColorB}" Offset="1.0" />
+        </LinearGradientBrush>
+    </Application.Resources>
+</Application>

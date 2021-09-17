@@ -1,3 +1,4 @@
 # XamarinForms.FlexibleLogin
 Flexible UI for Xamarin.Forms Sign In screen written in XAML
-![Image of UI](https://ibb.co/nwxFmxX)
+
+![Image](https://i.ibb.co/QJy4QyW/Screenshot.jpg)
